@@ -1,0 +1,37 @@
+.footer{
+    background-color: var(--color-box);
+margin: 0% 5%;
+    padding: 2% 4%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: small;
+    color: var(--color-text-secondary);
+}
+.logo{
+    font-family: "Montserrat", sans-serif;
+     font-size: 35px;
+    color:  rgb(45 212 191);
+    font-weight: 600;
+}
+.copyright{
+    margin-top: 4%;
+    font-size: large;
+}
+li{
+    margin-top: 5%;
+    cursor: pointer;
+    list-style: none;
+    font-size: large;
+}
+h1{
+    margin-bottom: 10%;
+}
+.icons{
+    display: flex;
+    gap: 14%;
+    margin-top: 5%;
+    font-size: x-large;
+    cursor: pointer;
+}
