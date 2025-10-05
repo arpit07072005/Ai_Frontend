@@ -11,7 +11,7 @@ function Signup() {
   const navigate = useNavigate();
   const handleClick= async()=>{
     try {
-      const response = await axios.post('http://localhost:4000/api/v1/users/signup',{
+      const response = await axios.post('https://ai-backend-2r4k.onrender.com/api/v1/users/signup',{
          username: name,
         email:email,
         password:password,
