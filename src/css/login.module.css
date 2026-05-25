@@ -53,4 +53,9 @@ input::placeholder {
     .login{
         width: 90%;
     }
+    .background{
+        padding: 5% 0%;
+        margin-top: -10%;
+    }
+
 }

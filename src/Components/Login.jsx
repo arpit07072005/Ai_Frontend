@@ -12,7 +12,7 @@ function Login() {
   const handleClick =async ()=>{
     setLoading(true);
     try {
-      const response = await axios.post('https://ai-backend-2r4k.onrender.com/api/v1/users/login',{
+      const response = await axios.post('http://localhost:4000/api/v1/users/login',{
         email:email,
         password:password
       },{withCredentials:true})
@@ -37,9 +37,7 @@ function Login() {
        <label htmlFor="password">Password</label>
         <input type="password" id='password'className={styles.input} onChange={(e)=>setPassword(e.target.value)}/>
        
-        <button className={`${styles.input} ${styles.button}`}onClick={handleClick} disabled={loading}>
-          {loading ? 'Signing in...' : 'Sign in'}
-        </button>
+        <button className={`${styles.input} ${styles.button}`}onClick={handleClick}>Sign in</button>
         <p className={styles.bottom}>First time?<Link to='/signup'>Sign up</Link>  for free</p>
       </div>
     </div>

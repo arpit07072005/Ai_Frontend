@@ -109,7 +109,7 @@ cursor: pointer;
     }
         .buttons{
             flex-direction: column;
-            gap: 5%;
+            gap: 7px;
         }
         .submit,.end{
             width: 100%;
