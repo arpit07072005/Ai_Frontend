@@ -12,7 +12,7 @@ function Login() {
   const handleClick =async ()=>{
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/v1/users/login',{
+      const response = await axios.post('https://ai-backend-2r4k.onrender.com/api/v1/users/login',{
         email:email,
         password:password
       },{withCredentials:true})

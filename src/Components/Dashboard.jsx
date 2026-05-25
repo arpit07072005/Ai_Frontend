@@ -22,7 +22,7 @@ function Dashboard() {
   useEffect(() => {
     const user = async () => {
       try {
-        const response = await axios.post("http://localhost:4000/api/v1/users/myself", {}, { withCredentials: true });
+        const response = await axios.post("https://ai-backend-2r4k.onrender.com/api/v1/users/myself", {}, { withCredentials: true });
         setName(response.data.user);
         console.log(response.data.user);
       } catch (error) {
@@ -34,7 +34,7 @@ function Dashboard() {
 
   const handlelogout = async () => {
     try {
-      await axios.post("http://localhost:4000/api/v1/users/logout", {}, { withCredentials: true });
+      await axios.post("https://ai-backend-2r4k.onrender.com/api/v1/users/logout", {}, { withCredentials: true });
       toast.success("Logout successfully");
       navigate('/login')
     } catch (error) {
@@ -43,7 +43,7 @@ function Dashboard() {
   }
   const handleDelete = async (i) => {
     try {
-      await axios.post("http://localhost:4000/api/v1/deleteinterview", { i: i }, { withCredentials: true });
+      await axios.post("https://ai-backend-2r4k.onrender.com/api/v1/deleteinterview", { i: i }, { withCredentials: true });
       const updatedData = name.data.filter((_, index) => index !== i);
       setName({ ...name, data: updatedData });
       toast.success("Interview deleted successfully");

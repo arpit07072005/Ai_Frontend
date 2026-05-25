@@ -27,7 +27,7 @@ function Ai() {
     setResponseai("Thinking...");
     await setActiveai(true);
     try {
-      const response = await axios.post("http://localhost:4000/api/v1/question", {
+      const response = await axios.post("https://ai-backend-2r4k.onrender.com/api/v1/question", {
         topic: data,
       }, { withCredentials: true });
       const ques = response.data.question;
@@ -80,7 +80,7 @@ function Ai() {
     setResponseai("Thinking...");
     setActiveai(true);
     try {
-      const response = await axios.post("http://localhost:4000/api/v1/evaluate", {
+      const response = await axios.post("https://ai-backend-2r4k.onrender.com/api/v1/evaluate", {
         userQuestion: question,
         userAnswer: ans,
       }, { withCredentials: true });
@@ -127,7 +127,7 @@ function Ai() {
     window.speechSynthesis.cancel();
     try {
       await toast.promise(
-      axios.post("http://localhost:4000/api/v1/endInterview", {}, { withCredentials: true }),
+      axios.post("https://ai-backend-2r4k.onrender.com/api/v1/endInterview", {}, { withCredentials: true }),
       {
         pending: "Interview is being saved...",
         success: "Interview saved successfully ",
