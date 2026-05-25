@@ -388,3 +388,71 @@ padding: 2%;
     gap: 3%;
     width: 26%;
 }
+
+@media screen and (max-width: 768px) {
+    .dashboard{
+        flex-direction: column;
+        height: auto;
+    }
+    .right{
+        width: 100%;
+        margin: 5% 0% 0% 0%;
+    }
+    .left{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+     .input{
+         width: 90%;
+     }
+     .submit{
+         width: 90%;
+         margin-top: 3%;
+         margin-left: 0%;
+     }
+     .card{
+         width: 350px;
+     }
+     .heading1{
+         font-size: 30px;
+     }
+     .logo{
+            font-size: 30px;
+        }
+        .heading{
+            font-size: 24px;
+        }
+        .notfound{
+            font-size: 18px;
+        }
+        .subheading{
+            font-size: 18px;
+     }
+     .subheading{
+         font-size: 18px;
+         display: flex;
+         flex-direction: column;
+     }
+     .top{
+         flex-direction: column;
+         gap: 20%;
+     }
+    .topleft,.topright{
+        width: 100%;
+    }
+    .content{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contentleft,.contentright{
+        width: 100%;
+    }
+    .suggestions{
+        width: 90%;
+        left: 5%;
+    }
+    .detailed{
+        width: 32%;
+    }
+}

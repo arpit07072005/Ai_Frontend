@@ -31,7 +31,7 @@
 }
 .ai,.you{
     height: 250px;
-    aspect-ratio: 1.4/1;
+    aspect-ratio: 1/1;
   border: 2px solid var(--color-border);
   border-radius: 5%;
   display: flex;
@@ -94,4 +94,30 @@ cursor: pointer;
 }
 .end{
     background-color: red;
+}
+@media screen and (max-width: 768px) {
+    .container{
+        width: 90%;
+        height: auto;
+    }
+    .cardcont{
+        flex-direction: column;
+        gap: 20%;
+    }
+    .ai,.you{
+        width: 100%;
+    }
+        .buttons{
+            flex-direction: column;
+            gap: 5%;
+        }
+        .submit,.end{
+            width: 100%;
+        }
+        .image1, .image2{
+            width: 150px;
+        }
+        .background{
+            min-height: 100vh;
+        }
 }

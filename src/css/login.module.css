@@ -49,3 +49,8 @@ input::placeholder {
     text-align: center;
      color: var(--color-text-secondary);
 }
+@media screen and (max-width: 768px) {
+    .login{
+        width: 90%;
+    }
+}

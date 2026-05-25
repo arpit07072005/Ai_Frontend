@@ -35,3 +35,11 @@ h1{
     font-size: x-large;
     cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+    .footer{
+        flex-direction: column;
+        text-align: center;
+        gap: 10%;
+    }
+    
+}
