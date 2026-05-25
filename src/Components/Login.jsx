@@ -6,9 +6,11 @@ import axios from "axios"
 import { toast } from "react-toastify"
 function Login() {
   const [email ,setEmail]=useState("")
-  const [password,setPassword]=useState("")
+  const [password,setPassword]=useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleClick =async ()=>{
+    setLoading(true);
     try {
       const response = await axios.post('https://ai-backend-2r4k.onrender.com/api/v1/users/login',{
         email:email,
@@ -19,6 +21,8 @@ function Login() {
     } catch (error) {
       console.log(error)
       toast.error("Login Failed");
+    }finally{
+      setLoading(false);
     }
   }
   return (
@@ -33,7 +37,9 @@ function Login() {
        <label htmlFor="password">Password</label>
         <input type="password" id='password'className={styles.input} onChange={(e)=>setPassword(e.target.value)}/>
        
-        <button className={`${styles.input} ${styles.button}`}onClick={handleClick}>Sign in</button>
+        <button className={`${styles.input} ${styles.button}`}onClick={handleClick} disabled={loading}>
+          {loading ? 'Signing in...' : 'Sign in'}
+        </button>
         <p className={styles.bottom}>First time?<Link to='/signup'>Sign up</Link>  for free</p>
       </div>
     </div>

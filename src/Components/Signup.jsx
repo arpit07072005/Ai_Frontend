@@ -8,8 +8,10 @@ function Signup() {
   const [mobile , setMobile]=useState("");
   const [email , setEmail]=useState("");
   const [password, setPassword]= useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleClick= async()=>{
+    setLoading(true);
     try {
       const response = await axios.post('https://ai-backend-2r4k.onrender.com/api/v1/users/signup',{
          username: name,
@@ -23,6 +25,8 @@ function Signup() {
     } catch (error) {
       console.log(error);
       toast.error("signup failed")
+    }finally{
+      setLoading(false);
     }
   }
   return (
@@ -44,7 +48,9 @@ function Signup() {
         <label htmlFor="password">Password</label>
         <input type="password" id='password'className={styles.input} onChange={(e)=>setPassword(e.target.value)}/>
         
-        <button className={`${styles.input} ${styles.button}` } onClick={handleClick}>Create an Account</button>
+        <button className={`${styles.input} ${styles.button}` } onClick={handleClick} disabled={loading}>
+          {loading ? 'Creating Account...' : 'Create an Account'}
+        </button>
         <p className={styles.bottom}>Have an account already?<Link to="/login">Sign in</Link></p>
       </div>
     </div>
